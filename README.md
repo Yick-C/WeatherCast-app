@@ -16,16 +16,16 @@ git clone https://github.com/yick-c/weatherly-app.git
 cd weatherly-app
 ```
 
-2. Install dependencies
+2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. Start the Expo development server
+3. **Start the Expo development server**
 ```bash
 npx expo start
 ```
 
-4. Run on your device
+4. **Run on your device**
 - Downlaod the Expo Go app from the App Store (iOS) or Google Play Store (Android)
 - Scan the QR code shown in the terminal 
