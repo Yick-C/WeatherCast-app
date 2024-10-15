@@ -5,12 +5,13 @@ import IconButton from "../components/UI/IconButton";
 import LoadingOverlay from "../components/UI/LoadingOverlay";
 import ErrorOverlay from "../components/UI/ErrorOverlay";
 
-import WeatherDetails from "../components/Weather/WeatherDetails";
+import WeatherDisplay from "../components/Weather/WeatherDisplay";
 import WeatherTitle from "../components/Weather/WeatherTitle";
 import Weather from "../models/weather";
 
 import { fetchWeatherData } from "../api/weatherApi";
 import { LocationContext } from "../context/locationContext";
+import WeatherDetails from "../components/Weather/WeatherDetails";
 
 function HomeScreen({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +40,6 @@ function HomeScreen({ route, navigation }) {
       fetchWeather("currentWeather", {latitude, longitude});
     }
   }, [currentLocation]);
-
 
   async function fetchWeather(type, data) {
     try {
@@ -73,7 +73,11 @@ function HomeScreen({ route, navigation }) {
             <WeatherTitle weatherData={displayedWeather} />
           </View>
           <View style={styles.currentWeatherContainer}>
+            <WeatherDisplay weatherData={displayedWeather} />
             <WeatherDetails weatherData={displayedWeather} />
+          </View>
+          <View>
+            
           </View>
         </>
       ) : (
@@ -89,6 +93,9 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
   },
+  searchContainer: {
+    flex: 1,
+  },
   weatherTitleContainer: {
     flex: 1,
     alignItems: 'flex-start',
@@ -96,6 +103,7 @@ const styles = StyleSheet.create({
     paddingTop: 30,
   },
   currentWeatherContainer: {
-    flex: 6,
+    flex: 5,
+    alignItems: 'center'
   }
 });
