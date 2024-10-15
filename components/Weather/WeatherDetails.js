@@ -1,18 +1,9 @@
 import { View, Text, Image, StyleSheet } from "react-native";
-import Weather from "../../models/weather";
-import WeatherTitle from "./WeatherTitle";
 
 function WeatherDetails({ weatherData, iconStyle, tempStyle }) {
   return (
     <>
       {weatherData ? (
-        <View>
-          <WeatherTitle
-            place={weatherData.cityName}
-            time={weatherData.datetimeUnix}
-            timezone={weatherData.timezone}
-            country={weatherData.country}
-          />
           <View style={styles.rootContainer}>
             <Image
               source={{
@@ -21,11 +12,10 @@ function WeatherDetails({ weatherData, iconStyle, tempStyle }) {
               style={[styles.icon, iconStyle]}
             />
             <Text style={[styles.temperature, tempStyle]}>
-              {Math.round(weatherData.temperature)}°
+              {weatherData.getTemperature()}°
             </Text>
             <Text style={styles.description}>{weatherData.description}</Text>
           </View>
-        </View>
       ) : (
         <Text style={styles.error}>
           {" "}
@@ -40,18 +30,19 @@ export default WeatherDetails;
 
 const styles = StyleSheet.create({
   rootContainer: {
-    padding: 10,
     flexDirection: "column",
     alignItems: "center",
-    gap: 10,
+    flex: 4,
+    // borderColor: 'red',
+    // borderWidth: 1
   },
   icon: {
     width: undefined,
-    height: "50%",
+    height: "40%",
     aspectRatio: 1,
   },
   temperature: {
-    fontSize: 100,
+    fontSize: 120,
     fontWeight: "bold",
     color: "white",
   },

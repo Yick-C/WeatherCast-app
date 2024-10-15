@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "./screens/HomeScreen";
 import ForecastScreen from "./screens/ForecastScreen";
-import LocationContextProvider from "./context/location-context";
+import LocationContextProvider from "./context/locationContext";
 
 const BottomTab = createBottomTabNavigator();
 
