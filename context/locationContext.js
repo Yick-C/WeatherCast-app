@@ -5,15 +5,16 @@ import {
 } from "expo-location";
 
 export const LocationContext = createContext({
-  currentLocation: [],
-  cities: [],
+  currentLocation: {},
+  favouriteCities: [],
+  updateCurrentLocation: (city) => {},
   addFavourite: (city) => {},
   removeFavourite: (city) => {},
 });
 
 function LocationContextProvider({ children }) {
   const [currentLocation, setCurrentLocation] = useState([]);
-  const [favouriteCities, setFavouriteCities] = useState([]);
+  const [favouriteCities, setFavouriteCities] = useState(['']);
 
   useEffect(() => {
     (async () => {
@@ -31,6 +32,9 @@ function LocationContextProvider({ children }) {
     })();
   }, []);
 
+  function updateCurrentLocation(city) {
+    setFavouriteCities((currentCitiesList) => [city, ...currentCitiesList.slice(1, currentCitiesList.length)]);
+  }
   function addFavourite(city) {
     setFavouriteCities((currentCitiesList) => [...currentCitiesList, city]);
   }
@@ -41,7 +45,8 @@ function LocationContextProvider({ children }) {
 
   const value = {
     currentLocation: currentLocation,
-    cities: favouriteCities,
+    favouriteCities: favouriteCities,
+    updateCurrentLocation: updateCurrentLocation,
     addFavourite: addFavourite,
     removeFavourite: removeFavourite,
   };
