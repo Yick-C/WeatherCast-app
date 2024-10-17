@@ -13,6 +13,7 @@ import { fetchWeatherData } from "../api/weatherApi";
 import { LocationContext } from "../context/locationContext";
 import SearchBar from "../components/SearchBar/SearchBar";
 import WeatherDetails from "../components/Weather/WeatherDetails";
+import FavouritesList from "../components/FavouritesList";
 
 function HomeScreen({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,14 +32,7 @@ function HomeScreen({ route, navigation }) {
             <SearchBar setSearch={setSearch} />
           </View>
         );
-      },
-      headerLeft: () => {
-        return (
-          <View style={{ paddingLeft: 20 }}>
-            <IconButton icon="list" color="white" size={28} />
-          </View>
-        );
-      },
+      }
     });
   }, [navigation]);
 
@@ -97,6 +91,9 @@ function HomeScreen({ route, navigation }) {
             <WeatherDisplay weatherData={displayedWeather} />
             <WeatherDetails weatherData={displayedWeather} />
           </View>
+          <View style={styles.favouritesListContainer}>
+            <FavouritesList handleSelectedCity={setSearch} />
+          </View>
         </>
       ) : (
         <ErrorOverlay message="Search for a location or Allow location access to see the current weather" />
@@ -124,4 +121,7 @@ const styles = StyleSheet.create({
     flex: 5,
     alignItems: "center",
   },
+  favouritesListContainer: {
+    flex: 1
+  }
 });
