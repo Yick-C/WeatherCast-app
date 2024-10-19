@@ -5,6 +5,7 @@ function DailyForecast({ forecastData, date }) {
   return (
     <FlatList
       data={forecastData[date]}
+      showsHorizontalScrollIndicator={false}
       contentContainerStyle={{gap: 10, padding: 10}}
       renderItem={({ item }) => {
         return (
