@@ -12,7 +12,7 @@ This is a simple weather application built using React Native.
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yick-c/weatherly-app.git
+git clone https://github.com/Yick-C/weatherly-app.git
 cd weatherly-app
 ```
 
@@ -21,11 +21,18 @@ cd weatherly-app
 npm install
 ```
 
-3. **Start the Expo development server**
+3. **Get an API key from https://openweathermap.org/api**
+- The app uses OpenWeatherMap API to get weather data so you will need to sign up for an account (you can use the free tier)
+
+4. **Copy and paste the API key**
+- When you have an account, you will need to copy the API key. Then in the app repository, find the 'constants' folder and open the 'global.js'
+- Paste the key in where it says '[ENTER API KEY HERE]' (remove the brackets)
+
+5. **Start the Expo development server**
 ```bash
 npx expo start
 ```
 
-4. **Run on your device**
-- Downlaod the Expo Go app from the App Store (iOS) or Google Play Store (Android)
+6. **Run on your device**
+- Download the Expo Go app from the App Store (iOS) or Google Play Store (Android)
 - Scan the QR code shown in the terminal 

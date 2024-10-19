@@ -17,7 +17,7 @@ export default function App() {
       <StatusBar style="light" />
       <LocationContextProvider>
         <ImageBackground
-          source={require("./assets/sky_background.jpg")}
+          source={require("./assets/images/sky_background.jpg")}
           resizeMode="cover"
           style={styles.background}
         >
