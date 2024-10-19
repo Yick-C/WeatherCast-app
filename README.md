@@ -8,9 +8,11 @@ This is a simple weather application built using React Native.
 - Search for the weather by city
 - Add and save cities to your favourites
 
-![Picture of weather screen of app on Android](https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/android_demo.png  =250x400)
-![Picture of weather screen of app on IoS](https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/ios_demo.png =250x400)
-![Picture of forecast screen of app on IoS](https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/ios_demo2.png =250x400)
+<p align="center">
+  <img src="https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/android_demo.png" width="250" height="400">
+  <img src="https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/ios_demo.png" width="250" height="400">
+  <img src="https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/ios_demo2.png" width="250" height="400">
+</p>
 
 ## Installation
 
