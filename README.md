@@ -1,4 +1,4 @@
-# Weatherly App 👋
+# Weatherly App 🌤️
 This is a simple weather application built using React Native.
 
 ## Features
