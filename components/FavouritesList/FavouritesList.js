@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ScrollView, TouchableOpacity, StyleSheet, Text } from "react-native";
-import { LocationContext } from "../context/locationContext";
+import { LocationContext } from "../../context/locationContext";
 
 function FavouritesList({ handleSelectedCity }) {
   const { favouriteCities } = useContext(LocationContext);
@@ -13,15 +13,18 @@ function FavouritesList({ handleSelectedCity }) {
         horizontal={true}
         contentContainerStyle={{ gap: 10 }}
       >
-        {favouriteCities.map((city) => (
-          <TouchableOpacity
-            key={city}
-            style={styles.citiesContainer}
-            onPress={() => handleSelectedCity(city)}
-          >
-            <Text style={styles.citiesText}>{city}</Text>
-          </TouchableOpacity>
-        ))}
+        {favouriteCities.map((city, index) => {
+          if (index === 0 && city === "") return null;
+          return (
+            <TouchableOpacity
+              key={city}
+              style={styles.citiesContainer}
+              onPress={() => handleSelectedCity(city)}
+            >
+              <Text style={styles.citiesText}>{index == 0 ? 'Your Location' : city}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </ScrollView>
     </>
   );

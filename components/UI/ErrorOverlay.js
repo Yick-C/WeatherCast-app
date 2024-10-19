@@ -1,4 +1,4 @@
-import { ActivityIndicator, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 function ErrorOverlay({message}) {
   return (

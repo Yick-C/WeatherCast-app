@@ -1,19 +1,19 @@
 import { useContext, useEffect, useLayoutEffect, useState } from "react";
-import { View, StyleSheet, Text, Button } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
-import IconButton from "../components/UI/IconButton";
 import LoadingOverlay from "../components/UI/LoadingOverlay";
 import ErrorOverlay from "../components/UI/ErrorOverlay";
 
-import WeatherDisplay from "../components/Weather/WeatherDisplay";
-import WeatherTitle from "../components/Weather/WeatherTitle";
 import Weather from "../models/weather";
+import WeatherTitle from "../components/Weather/WeatherTitle";
+import WeatherDisplay from "../components/Weather/WeatherDisplay";
+import WeatherDetails from "../components/Weather/WeatherDetails";
+
+import SearchBar from "../components/SearchBar/SearchBar";
+import FavouritesList from "../components/FavouritesList/FavouritesList";
 
 import { fetchWeatherData } from "../api/weatherApi";
 import { LocationContext } from "../context/locationContext";
-import SearchBar from "../components/SearchBar/SearchBar";
-import WeatherDetails from "../components/Weather/WeatherDetails";
-import FavouritesList from "../components/FavouritesList";
 
 function HomeScreen({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +21,8 @@ function HomeScreen({ route, navigation }) {
   const [displayedWeather, setDisplayedWeather] = useState();
   const [search, setSearch] = useState("");
 
-  const { currentLocation, updateCurrentLocation } = useContext(LocationContext);
+  const { currentLocation, updateCurrentLocation } =
+    useContext(LocationContext);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -32,7 +33,7 @@ function HomeScreen({ route, navigation }) {
             <SearchBar setSearch={setSearch} />
           </View>
         );
-      }
+      },
     });
   }, [navigation]);
 
@@ -73,7 +74,7 @@ function HomeScreen({ route, navigation }) {
   }, [currentLocation, search]);
 
   if (error) {
-    return <ErrorOverlay message={error} />;
+    return <ErrorOverlay message={error} />
   }
 
   if (isLoading) {
@@ -85,7 +86,10 @@ function HomeScreen({ route, navigation }) {
       {displayedWeather ? (
         <>
           <View style={styles.weatherTitleContainer}>
-            <WeatherTitle weatherData={displayedWeather} showCurrentWeather={setSearch}/>
+            <WeatherTitle
+              weatherData={displayedWeather}
+              showCurrentWeather={setSearch}
+            />
           </View>
           <View style={styles.currentWeatherContainer}>
             <WeatherDisplay weatherData={displayedWeather} />
@@ -122,6 +126,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   favouritesListContainer: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });

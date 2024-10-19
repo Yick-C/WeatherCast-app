@@ -22,8 +22,9 @@ class Weather {
   getCurrentDateTime() {
     const convertedTimezone = this.timezone / 60; // timezone is in seconds, moments uses minutes
     const now = moment.unix(this.datetimeUnix).utcOffset(convertedTimezone);
-    return now.format("MMM DD, HH:mm");
+    return now;
   }
+
 }
 
 export default Weather;

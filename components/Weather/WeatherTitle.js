@@ -12,10 +12,14 @@ function WeatherTitle({ weatherData, showCurrentWeather }) {
   const cityIsFavourite = locationCtx.favouriteCities.includes(displayedCity);
 
   function favouriteCityHandler() {
-    if (cityIsFavourite && locationCtx.favouriteCities[0] !== displayedCity) {
-      locationCtx.removeFavourite(displayedCity);
-    } else {
-      locationCtx.addFavourite(displayedCity);
+    // Cannot remove current location from favourites list
+    // Otherwise, the button toggles if the city is favourited or not
+    if (locationCtx.favouriteCities[0] !== displayedCity) {
+      if (cityIsFavourite) {
+        locationCtx.removeFavourite(displayedCity);
+      } else {
+        locationCtx.addFavourite(displayedCity);
+      }
     }
   }
 
@@ -44,7 +48,7 @@ function WeatherTitle({ weatherData, showCurrentWeather }) {
           />
         </View>
       )}
-      <Text style={styles.date}>{weatherData.getCurrentDateTime()}</Text>
+      <Text style={styles.date}>{weatherData.getCurrentDateTime().format("ddd DD MMM, HH:mm")}</Text>
     </View>
   );
 }

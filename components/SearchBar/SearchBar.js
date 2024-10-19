@@ -1,10 +1,9 @@
-import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
+import { View, TextInput, StyleSheet, Platform } from "react-native";
 import { useState } from "react";
 import IconButton from "../UI/IconButton";
 
 function SearchBar({ setSearch }) {
   const [showSearchBar, toggleSearchBar] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -16,9 +15,8 @@ function SearchBar({ setSearch }) {
             returnKeyType="search"
             onSubmitEditing={(value) => {
               setSearch(value.nativeEvent.text);
-              setIsFocused(false);
+              toggleSearchBar(!showSearchBar);
             }}
-            onFocus={() => setIsFocused(true)}
           />
         </>
       ) : null}
@@ -44,10 +42,10 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   searchContainer: {
-    padding: 8,
+    padding: 10,
     borderWidth: 1,
-    borderColor: "black",
-    width: "180%",
+    borderColor: "gray",
+    width: Platform.OS === 'android' ? '90%' : '190%',
     height: 40,
     color: "black",
     borderRadius: 10,
