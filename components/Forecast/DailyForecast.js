@@ -5,6 +5,7 @@ function DailyForecast({ forecastData, date }) {
   return (
     <FlatList
       data={forecastData[date]}
+      contentContainerStyle={{gap: 10, padding: 10}}
       renderItem={({ item }) => {
         return (
           <View style={styles.weatherContainer}>
@@ -17,7 +18,6 @@ function DailyForecast({ forecastData, date }) {
           </View>
         );
       }}
-      contentContainerStyle={{ gap: 10 }}
       horizontal={true}
     />
   );
@@ -28,13 +28,12 @@ export default DailyForecast;
 const styles = StyleSheet.create({
   weatherContainer: {
     alignItems: 'center',
-    width: 90,
-    padding: 10,
-    borderWidth: 1,
-    borderRadius: 20,
+    width: 70,
+    padding: 10
   },
   time: {
     color: "white",
+    fontWeight: 'bold'
   },
   icon: {
     width: 60,
@@ -42,5 +41,7 @@ const styles = StyleSheet.create({
   },
   temperature: {
     fontSize: 14,
+    color: 'white',
+    fontWeight: '500'
   }
 });

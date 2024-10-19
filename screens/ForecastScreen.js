@@ -7,8 +7,8 @@ import LoadingOverlay from "../components/UI/LoadingOverlay";
 
 import ForecastList from "../components/Forecast/ForecastList";
 
-function ForecastScreen({route, navigation}) {
-  const [isLoading, setIsLoading] = useState(true);
+function ForecastScreen({ route, navigation }) {
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
   const { currentLocation } = useContext(LocationContext);
@@ -17,10 +17,11 @@ function ForecastScreen({route, navigation}) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: "Current Forecast",
-      headerTransparent: false
+      headerTransparent: false,
     });
   }, [navigation]);
 
+  // Fetches the forecast for the user's current location
   useEffect(() => {
     if (currentLocation.length !== 0) {
       const { latitude, longitude } = currentLocation;
@@ -42,6 +43,7 @@ function ForecastScreen({route, navigation}) {
     }
   }
 
+  // Returns error message from fetchWeather function if api is not working
   if (error) {
     return <ErrorOverlay message={error} />;
   }
@@ -52,9 +54,13 @@ function ForecastScreen({route, navigation}) {
 
   return (
     <View style={styles.appContainer}>
-      <View style={styles.forecastContainer}>
-        {forecastData && <ForecastList forecastData={forecastData} />}
-      </View>
+      {forecastData ? (
+        <View style={styles.forecastContainer}>
+          {forecastData && <ForecastList forecastData={forecastData} />}
+        </View>
+      ) : (
+        <ErrorOverlay message="Search for a location or Allow location access to see the current forecast" />
+      )}
     </View>
   );
 }
@@ -63,11 +69,11 @@ export default ForecastScreen;
 
 const styles = StyleSheet.create({
   appContainer: {
-    flex: 1
+    flex: 1,
   },
   forecastContainer: {
     flex: 1,
     paddingTop: 20,
-    justifyContent: 'center'
+    justifyContent: "center",
   },
 });
