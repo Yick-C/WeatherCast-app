@@ -49,7 +49,7 @@ function ForecastList({ forecastData }) {
         <View style={styles.container}>
           {Object.keys(forecasts).map((date) => {
             return (
-              <View style={styles.dateContainer}>
+              <View style={styles.dateContainer} key={date}>
                 <ForecastSummary
                   date={date}
                   dayForecast={forecasts[date]}

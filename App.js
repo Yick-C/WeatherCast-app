@@ -31,6 +31,7 @@ export default function App() {
                 headerStyle: { backgroundColor: "transparent" },
                 headerTintColor: "white",
                 tabBarActiveTintColor: "#528ab4",
+                tabBarStyle: {backgroundColor: isDarkTheme ? "#28282B" : 'white'}
               }}
             >
               <BottomTab.Screen
