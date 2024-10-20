@@ -9,15 +9,15 @@ This is a simple weather application built using React Native and Expo.
 - Add and save cities to your favourites
 
 <p align="center">
-  <img src="https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/ios_demo.png" width="250" height="500">
-  <img src="https://github.com/Yick-C/weatherly-app/blob/master/assets/images/demo/ios_demo2.png" width="250" height="500">
+  <img src="https://github.com/Yick-C/WeatherCast-app/blob/master/assets/images/demo/ios_demo.png" width="250" height="500">
+  <img src="https://github.com/Yick-C/WeatherCast-app/blob/master/assets/images/demo/ios_demo2.png" width="250" height="500">
 </p>
 
 ## Installation
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Yick-C/weatherly-app.git
+git clone https://github.com/Yick-C/WeatherCast-app
 cd weatherly-app
 ```
 
