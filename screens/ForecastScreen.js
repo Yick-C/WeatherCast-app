@@ -11,7 +11,7 @@ function ForecastScreen({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
-  const { currentLocation } = useContext(LocationContext);
+  const { currentLocation, favouriteCities } = useContext(LocationContext);
   const [forecastData, setForecastData] = useState(null);
 
   useLayoutEffect(() => {
@@ -55,11 +55,16 @@ function ForecastScreen({ route, navigation }) {
   return (
     <View style={styles.appContainer}>
       {forecastData ? (
-        <View style={styles.forecastContainer}>
-          {forecastData && <ForecastList forecastData={forecastData} />}
-        </View>
+        <>
+          <View style={styles.forecastTitleContainer}>
+            <Text style={styles.forecastTitle}>{favouriteCities[0]}</Text>
+          </View>
+          <View style={styles.forecastContainer}>
+            {forecastData && <ForecastList forecastData={forecastData} />}
+          </View>
+        </>
       ) : (
-        <ErrorOverlay message="Search for a location or Allow location access to see the current forecast" />
+        <ErrorOverlay message="Allow location access to see the current forecast" />
       )}
     </View>
   );
@@ -71,8 +76,19 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
   },
-  forecastContainer: {
+  forecastTitleContainer: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    paddingLeft: 20
+  },
+  forecastTitle: {
+    fontSize: 28,
+    color: "white",
+    fontWeight: 'bold'
+  },
+  forecastContainer: {
+    flex: 6,
     justifyContent: "center",
   },
 });
