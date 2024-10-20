@@ -2,9 +2,11 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import WeatherDisplay from "../Weather/WeatherDisplay";
 
 function DailyForecast({ forecastData, date }) {
+
   return (
     <FlatList
       data={forecastData[date]}
+      key={date}
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{gap: 10, padding: 10}}
       renderItem={({ item }) => {
