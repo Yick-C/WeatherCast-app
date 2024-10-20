@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "weatherly",
-    "slug": "weatherly",
+    "name": "WeatherCast",
+    "slug": "WeatherCast",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,7 +29,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow Weatherly to use your location."
+          "locationAlwaysAndWhenInUsePermission": "Allow WeatherCast to use your location."
         }
       ]
     ]

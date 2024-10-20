@@ -1,4 +1,4 @@
-# Weatherly App 🌤️
+# WeatherCast App 🌤️
 This is a simple weather application built using React Native and Expo.
 
 ## Features
