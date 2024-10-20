@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { ImageBackground, StyleSheet } from "react-native";
+import { ImageBackground, StyleSheet, useColorScheme } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
@@ -12,12 +12,15 @@ import LocationContextProvider from "./context/locationContext";
 const BottomTab = createBottomTabNavigator();
 
 export default function App() {
+  const theme = useColorScheme();
+  const isDarkTheme = theme === 'dark';
+
   return (
     <>
       <StatusBar style="light" />
       <LocationContextProvider>
         <ImageBackground
-          source={require("./assets/images/sky_background.jpg")}
+          source={isDarkTheme ? require("./assets/images/night_background.jpg") : require("./assets/images/sky_background.jpg") }
           resizeMode="cover"
           style={styles.background}
         >
