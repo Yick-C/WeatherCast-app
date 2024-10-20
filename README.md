@@ -18,7 +18,7 @@ This is a simple weather application built using React Native and Expo.
 1. **Clone the repository**
 ```bash
 git clone https://github.com/Yick-C/WeatherCast-app
-cd weatherly-app
+cd WeatherCast-app
 ```
 
 2. **Install dependencies**
