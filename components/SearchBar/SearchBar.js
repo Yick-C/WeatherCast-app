@@ -11,6 +11,7 @@ function SearchBar({ setSearch }) {
         <>
           <TextInput
             placeholder="Enter a city"
+            placeholderTextColor='#ccc'
             style={styles.searchContainer}
             returnKeyType="search"
             onSubmitEditing={(value) => {
