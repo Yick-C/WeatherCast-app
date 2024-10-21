@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingRight: 20,
     paddingLeft: 20,
-    padding: 10,
+    padding: 8,
     backgroundColor: "rgba(82, 138, 180, 0.1)",
   },
   date: {

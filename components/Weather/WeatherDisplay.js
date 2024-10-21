@@ -3,27 +3,18 @@ import { formatTemperature } from "../../utils/utils";
 
 function WeatherDisplay({ weatherData, iconStyle, tempStyle }) {
   return (
-    <>
-      {weatherData ? (
-        <View style={styles.rootContainer}>
-          <Image
-            source={{
-              uri: weatherData.imageUrl,
-            }}
-            style={[styles.icon, iconStyle]}
-          />
-          <Text style={[styles.temperature, tempStyle]}>
-            {formatTemperature(weatherData.temperature)}
-          </Text>
-          <Text style={styles.description}>{weatherData.description}</Text>
-        </View>
-      ) : (
-        <Text style={styles.error}>
-          {" "}
-          Error occurred in fetching the weather
-        </Text>
-      )}
-    </>
+    <View style={styles.rootContainer}>
+      <Image
+        source={{
+          uri: weatherData.imageUrl,
+        }}
+        style={[styles.icon, iconStyle]}
+      />
+      <Text style={[styles.temperature, tempStyle]}>
+        {formatTemperature(weatherData.temperature)}
+      </Text>
+      <Text style={styles.description}>{weatherData.description}</Text>
+    </View>
   );
 }
 
@@ -42,7 +33,7 @@ const styles = StyleSheet.create({
   temperature: {
     fontSize: 120,
     fontWeight: "bold",
-    color: "white"
+    color: "white",
   },
   description: {
     color: "white",

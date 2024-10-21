@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'flex-start',
-    paddingLeft: 20
+    paddingLeft: 20,
+    paddingBottom: 20
   },
   forecastTitle: {
     fontSize: 28,
@@ -88,7 +89,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   forecastContainer: {
-    flex: 6,
+    flex: 8,
     justifyContent: "center",
+    marginBottom: 40
   },
 });

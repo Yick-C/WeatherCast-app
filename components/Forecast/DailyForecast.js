@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   weatherContainer: {
     alignItems: 'center',
     width: 70,
-    padding: 10
+    padding: 5
   },
   time: {
     color: "white",

@@ -25,30 +25,26 @@ function WeatherTitle({ weatherData, showCurrentWeather }) {
 
   return (
     <View style={styles.container}>
-      {weatherData.cityName == null ? (
+      <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
+        <IconButton
+          icon="location"
+          color="white"
+          size={28}
+          onPress={() => showCurrentWeather(locationCtx.favouriteCities[0])}
+        />
         <Text style={styles.location}>
-          <IconButton icon="location" color="white" size={24} /> Unknown
+          {weatherData.cityName}, {weatherData.country}
         </Text>
-      ) : (
-        <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
-          <IconButton
-            icon="location"
-            color="white"
-            size={28}
-            onPress={() => showCurrentWeather(locationCtx.favouriteCities[0])}
-          />
-          <Text style={styles.location}>
-            {weatherData.cityName}, {weatherData.country}
-          </Text>
-          <IconButton
-            icon={cityIsFavourite ? "star" : "star-outline"}
-            color="white"
-            size={32}
-            onPress={favouriteCityHandler}
-          />
-        </View>
-      )}
-      <Text style={styles.date}>{weatherData.getCurrentDateTime().format("ddd DD MMM, HH:mm")}</Text>
+        <IconButton
+          icon={cityIsFavourite ? "star" : "star-outline"}
+          color="white"
+          size={32}
+          onPress={favouriteCityHandler}
+        />
+      </View>
+      <Text style={styles.date}>
+        {weatherData.getCurrentDateTime().format("ddd DD MMM, HH:mm")}
+      </Text>
     </View>
   );
 }
