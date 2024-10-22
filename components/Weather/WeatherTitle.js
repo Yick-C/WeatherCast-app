@@ -25,7 +25,7 @@ function WeatherTitle({ weatherData, showCurrentWeather }) {
 
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
+      <View style={styles.locationContainer}>
         <IconButton
           icon="location"
           color="white"
@@ -55,6 +55,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
     gap: 5,
+  },
+  locationContainer: {
+    flexDirection: "row",
+     gap: 10, 
+     alignItems: "center"
   },
   date: {
     fontSize: 20,

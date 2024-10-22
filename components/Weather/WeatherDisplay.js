@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   description: {
-    color: "white",
     fontSize: 20,
     fontWeight: "bold",
+    color: "white"
   }
 });

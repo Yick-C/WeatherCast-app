@@ -2,17 +2,17 @@ import { useContext, useState, useEffect, useLayoutEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { LocationContext } from "../context/locationContext";
 import { fetchWeatherData } from "../api/weatherApi";
+
 import ErrorOverlay from "../components/UI/ErrorOverlay";
 import LoadingOverlay from "../components/UI/LoadingOverlay";
-
 import ForecastList from "../components/Forecast/ForecastList";
 
 function ForecastScreen({ route, navigation }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
+  const [forecastData, setForecastData] = useState(null);
 
   const { currentLocation, favouriteCities } = useContext(LocationContext);
-  const [forecastData, setForecastData] = useState(null);
 
   useLayoutEffect(() => {
     navigation.setOptions({

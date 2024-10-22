@@ -31,6 +31,7 @@ function ForecastList({ forecastData }) {
       if (!groupedData[date]) {
         groupedData[date] = [];
       }
+
       const weatherObj = {
         time: moment(forecast.dt_txt).format("HH:mm"), // e.g. 18:00
         temperature: forecast.main.temp,
@@ -75,12 +76,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   dateContainer: {
-    width: "100%",
-    shadowColor: "black",
-    shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3,
-    elevation: 5,
-    overflow: "hidden",
+    width: "100%"
   },
 });

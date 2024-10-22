@@ -21,7 +21,9 @@ function FavouritesList({ handleSelectedCity }) {
               style={styles.citiesContainer}
               onPress={() => handleSelectedCity(city)}
             >
-              <Text style={styles.citiesText}>{index == 0 ? 'Your Location' : city}</Text>
+              <Text style={styles.citiesText}>
+                {index == 0 ? "Your Location" : city}
+              </Text>
             </TouchableOpacity>
           );
         })}
