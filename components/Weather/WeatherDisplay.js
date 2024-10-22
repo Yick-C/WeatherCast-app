@@ -39,11 +39,5 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     fontWeight: "bold",
-  },
-  wind: {
-    flexDirection: "row",
-  },
-  error: {
-    color: "white",
-  },
+  }
 });
