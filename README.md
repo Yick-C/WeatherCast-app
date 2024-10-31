@@ -8,7 +8,7 @@ This is a simple weather application built using React Native and Expo.
 - Search for the weather by city
 - Add and save cities to your favourites
 
-Compatible with ios and Android with light and dark theme
+Compatible with iOS and Android with light and dark theme
 <p align="center">
   <img src="https://github.com/Yick-C/WeatherCast-app/blob/master/assets/images/demo/ios_demo.png" width="250" height="500">
   <img src="https://github.com/Yick-C/WeatherCast-app/blob/master/assets/images/demo/android_demo2.png" width="250" height="500">
